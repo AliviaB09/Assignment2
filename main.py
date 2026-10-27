@@ -46,7 +46,7 @@ def cost_per_class(annual_cost, credits):
 
 
 
-def was_it_worth_it(user_1):
+#def was_it_worth_it(user_1):
     if (user_1.upper() == "Y"):
         print("Glad to see it was worth your time...hopefully.")
 
@@ -86,10 +86,7 @@ def main():
 
         choice = input("Choose an option: ")
 
-        if (choice == "Q"):
-            break
-
-        elif (choice == "1"):
+        if (choice == "1"):
             semester = cost_per_semester(price)
             print(f"Cost per semester: {semester:.2f}")
 
@@ -109,19 +106,20 @@ def main():
             classes = cost_per_class(price, credit)
             print(f"Cost per class: {classes:.2f}")
 
-        else:
-            print("Invalid, pick a different option.")
+        elif(choice == "Q"):
+            break
+
 
 
 
         # Add a branch for each menu option here.
-    user = input("Would you like to answer another question? (Y/N) ")
-    if(user.upper() == "N"):
-        print("Thanks anyways!")
+    #user = input("Would you like to answer another question? (Y/N) ")
+    #if(user.upper() == "N"):
+       # print("Thanks anyways!")
 
-    else:
-        user_1 = input("Was it worth it? (Y/N) ")
-        was_it_worth_it(user_1)
+    #else:
+       # user_1 = input("Was it worth it? (Y/N) ")
+        #was_it_worth_it(user_1)
 
 
 # ---- LAUNCH: do not change ----
