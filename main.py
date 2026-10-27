@@ -46,13 +46,12 @@ def cost_per_class(annual_cost, credits):
 
 
 
-#def was_it_worth_it(user):
-    user = user.upper
-    if user == "Y":
+def was_it_worth_it(user_1):
+    if (user_1.upper() == "Y"):
         print("Glad to see it was worth your time...hopefully.")
 
 
-    if user == "N":
+    elif (user_1.upper() == "N"):
         print("There will be better classes...maybe.")
 
     else:
@@ -116,6 +115,13 @@ def main():
 
 
         # Add a branch for each menu option here.
+    user = input("Would you like to answer another question? (Y/N) ")
+    if(user.upper() == "N"):
+        print("Thanks anyways!")
+
+    else:
+        user_1 = input("Was it worth it? (Y/N) ")
+        was_it_worth_it(user_1)
 
 
 # ---- LAUNCH: do not change ----
