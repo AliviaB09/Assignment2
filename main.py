@@ -46,16 +46,9 @@ def cost_per_class(annual_cost, credits):
 
 
 
-#def was_it_worth_it(user_1):
-    if (user_1.upper() == "Y"):
-        print("Glad to see it was worth your time...hopefully.")
-
-
-    elif (user_1.upper() == "N"):
-        print("There will be better classes...maybe.")
-
-    else:
-        print("I guess we'll never know.")
+def was_it_worth_it(user_1, price, credit):
+    skipped = cost_per_class(price, credit) * user_1
+    return skipped
 
 
 
@@ -81,7 +74,7 @@ def main():
         print("Cost per Day: 3")
         print("Cost per Credit: 4")
         print("Cost per Class: 5")
-        #print("Was it worth it?: 6")
+        print("Skipped Classes?: 6")
         print("Quit: Q")
 
         choice = input("Choose an option: ")
@@ -106,6 +99,13 @@ def main():
             classes = cost_per_class(price, credit)
             print(f"Cost per class: {classes:.2f}")
 
+        elif(choice == "6"):
+            user_1 = input("How many classes did you skip? ")
+            user_1 = int(user_1)
+            skipped_cost = was_it_worth_it(user_1, price, credit)
+            print(f"The amount that you wasted = {skipped_cost:.2f}")
+
+
         elif(choice == "Q"):
             break
 
@@ -113,13 +113,6 @@ def main():
 
 
         # Add a branch for each menu option here.
-    #user = input("Would you like to answer another question? (Y/N) ")
-    #if(user.upper() == "N"):
-       # print("Thanks anyways!")
-
-    #else:
-       # user_1 = input("Was it worth it? (Y/N) ")
-        #was_it_worth_it(user_1)
 
 
 # ---- LAUNCH: do not change ----
